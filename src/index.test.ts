@@ -1,16 +1,23 @@
-import {Cart} from "./ddd_bootcamp/domain/cart";
-import {Product} from "./ddd_bootcamp/domain/product";
+import { Cart } from './ddd_bootcamp/domain/cart';
+import { Product } from './ddd_bootcamp/domain/product';
 
 describe('Cart', function () {
-  it('should add items to the card', function () {
+  it('should implement card', function () {
     const cart = new Cart();
 
-    const applePencil = new Product("Apple Pencil");
+    const applePencil = new Product('Apple Pencil');
+    const sonyWirelessHeadphone = new Product('Sony Wireless headphone');
+
+    cart.addProduct(applePencil)
+    cart.addProduct(sonyWirelessHeadphone)
     cart.addProduct(applePencil)
 
-    const sonyWirelessHeadphone = new Product("Sony Wireless headphone");
-    cart.addProduct(sonyWirelessHeadphone)
+    expect(cart.getCartItems()).toEqual([
+      { product: applePencil, quantity: 2 },
+      { product: sonyWirelessHeadphone, quantity: 1 }
+    ])
 
-    expect(cart.getCartItems()).toEqual([applePencil, sonyWirelessHeadphone])
+    cart.removeProduct(applePencil)
+    expect(cart.getCartItems()).toEqual([{ product: sonyWirelessHeadphone, quantity: 1 }])
   });
 });
