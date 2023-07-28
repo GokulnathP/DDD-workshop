@@ -32,5 +32,8 @@ describe('Cart', function () {
 
     expect(cart1).not.toEqual(cart2);
     expect(cart1).toEqual(cart1);
+
+    expect(cart1.equals(cart2)).toBeFalsy();
+    expect(cart1.equals(cart1)).toBeTruthy();
   });
 });

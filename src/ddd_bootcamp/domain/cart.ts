@@ -33,4 +33,8 @@ export class Cart {
   public gerRemovedProducts() {
     return this.removedProducts
   }
+
+  public equals(cart: Cart) {
+    return this.id === cart.id
+  }
 }
