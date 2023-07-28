@@ -21,4 +21,16 @@ describe('Cart', function () {
     expect(cart.getCartItems()).toEqual([{ product: sonyWirelessHeadphone, quantity: 1 }])
     expect(cart.gerRemovedProducts()).toEqual([applePencil])
   });
+
+  it('should says two different carts are not equal even with same items', function () {
+    const applePencil = new Product('Apple Pencil');
+    const cart1 = new Cart();
+    const cart2 = new Cart();
+
+    cart1.addProduct(applePencil);
+    cart2.addProduct(applePencil);
+
+    expect(cart1).not.toEqual(cart2);
+    expect(cart1).toEqual(cart1);
+  });
 });

@@ -1,9 +1,16 @@
-import {Item} from "./item";
-import {Product} from "./product";
+import { Item } from './item';
+import { Product } from './product';
+
+const generateRandomId = () => (Math.random() * 10000).toFixed(0).toString() + '_' + (Math.random() * 10000).toFixed(0).toString()
 
 export class Cart {
+  private id: String;
   private cartItems: Item[] = [];
   private removedProducts: Product[] = [];
+
+  constructor() {
+    this.id = generateRandomId()
+  }
 
   public addProduct(product: Product) {
     const item = this.cartItems.find((item) => item.product.name === product.name)
