@@ -10,6 +10,6 @@ describe('Cart', function () {
     const sonyWirelessHeadphone = new Product("Sony Wireless headphone");
     cart.addProduct(sonyWirelessHeadphone)
 
-    expect(cart.getProducts()).toEqual([applePencil, sonyWirelessHeadphone])
+    expect(cart.getCartItems()).toEqual([applePencil, sonyWirelessHeadphone])
   });
 });

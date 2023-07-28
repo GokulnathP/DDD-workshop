@@ -3,18 +3,21 @@ export class Product {
   }
 }
 
-class CartItem {
+class Item {
   constructor(public product: Product, private quantity: number = 1) {
   }
 
   increaseQuantity() {
     this.quantity++;
   }
+
+  decreaseQuantity() {
+    this.quantity--;
+  }
 }
 
 export class Cart {
-  // private readonly products: Product[];
-  private readonly cartItems: CartItem[];
+  private readonly cartItems: Item[];
   constructor() {
     this.cartItems = []
   }
@@ -24,13 +27,9 @@ export class Cart {
     if (item) {
       item.increaseQuantity()
     } else {
-      this.cartItems.push(new CartItem(product))
+      this.cartItems.push(new Item(product))
     }
   }
-
-  // public getProducts() {
-  //   return this.products
-  // }
 
   public getCartItems() {
     return this.cartItems
