@@ -1,7 +1,7 @@
-import { Cart } from './ddd_bootcamp/domain/cart';
-import { Product } from './ddd_bootcamp/domain/product';
-import { Price } from './ddd_bootcamp/domain/Price';
-import { CompetitorBasedPricer } from './ddd_bootcamp/domain/domain_service/CompetitorBasedPricer';
+import { Cart } from './ddd_bootcamp/domain/e-commerce/cart';
+import { Product } from './ddd_bootcamp/domain/e-commerce/product';
+import { Price } from './ddd_bootcamp/domain/e-commerce/Price';
+import { CompetitorBasedPricer } from './ddd_bootcamp/domain/e-commerce/domain_service/CompetitorBasedPricer';
 
 describe('Cart', function () {
   it('should implement card', function () {

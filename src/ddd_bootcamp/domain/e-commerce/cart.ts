@@ -7,9 +7,11 @@ export class Cart {
   private id: String;
   private cartItems: Item[] = [];
   private removedProducts: Product[] = [];
+  private checkedOut: boolean;
 
   constructor() {
     this.id = generateRandomId()
+    this.checkedOut = false;
   }
 
   public addProduct(product: Product) {
@@ -36,5 +38,14 @@ export class Cart {
 
   public equals(cart: Cart) {
     return this.id === cart.id
+  }
+
+  public checkout() {
+    const products: Product[] = []
+    this.cartItems.forEach((item) => {
+      products.push(...Array(item.getQuantity()).map(() => item.product))
+    })
+    this.checkedOut = true;
+    return products;
   }
 }

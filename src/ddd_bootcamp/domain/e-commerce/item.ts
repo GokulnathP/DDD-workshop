@@ -11,4 +11,8 @@ export class Item {
   decreaseQuantity() {
     this.quantity--;
   }
+
+  public getQuantity() {
+    return this.quantity;
+  }
 }
