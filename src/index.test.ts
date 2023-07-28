@@ -19,5 +19,6 @@ describe('Cart', function () {
 
     cart.removeProduct(applePencil)
     expect(cart.getCartItems()).toEqual([{ product: sonyWirelessHeadphone, quantity: 1 }])
+    expect(cart.gerRemovedProducts()).toEqual([applePencil])
   });
 });
