@@ -83,4 +83,31 @@ product) .
 new Product( ”Apple Pencil", Price(discountedPrice, Currency.getInstance("USD")));
 new Product( ”Apple Pencil", Price(125, Currency.getInstance("USD"))) – 125 is already discount price
 ```
+### Code Problem 9
+
+Create Order(with Products) when Cart is checked out. Also, Mark Cart as checked out .
+
+Note –
+While Creating Order please do not use Item class but use Product class. Flatten out products in Item, that means, if Cart has  Item with Product “Apple Pencil” and Quantity two, then create two Product objects for “Apple Pencil” and add them to Order’s product list.
+```
+Order order = new Order( List<Product> products)
+```
+
+
+### Code Problem 10:
+Customer and Bank Account. ( Not related to e-commerce domain)
+When Customer’s Address is updated, update all her Bank Accounts addresses as well. ( This is invariant, or business rules or consistency rule given by business)
+--
+Note –
+Customer is Entity. Account is Entity.
+Customer has List of bank accounts.
+Customer has Address. Account has Address
+Address has one attribute called city.
+Address is Value Object
+```
+ customer.updateAddress(new Address(“Mumbai”))
+```
+
+
+
 
