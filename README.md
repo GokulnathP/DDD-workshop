@@ -51,3 +51,13 @@ cart1.equals(cart2) => should return false
 cart1.equals(cart1) => should return true
 ```
 
+### Code Problem 7
+
+Add Price to a Product . We need support for only one currency, say - USD.
+
+**Note**
+For modelling currency - Please use java.util.Currency (Currency.getInstance("USD"))  or what your programming language provides, if none just use String for now.
+```
+new Product("Apple Pencil", new Price(...));
+```
+

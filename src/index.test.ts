@@ -1,12 +1,12 @@
 import { Cart } from './ddd_bootcamp/domain/cart';
-import { Product } from './ddd_bootcamp/domain/product';
+import {Price, Product} from './ddd_bootcamp/domain/product';
 
 describe('Cart', function () {
   it('should implement card', function () {
     const cart = new Cart();
 
-    const applePencil = new Product('Apple Pencil');
-    const sonyWirelessHeadphone = new Product('Sony Wireless headphone');
+    const applePencil = new Product('Apple Pencil', new Price(2));
+    const sonyWirelessHeadphone = new Product('Sony Wireless headphone', new Price(2));
 
     cart.addProduct(applePencil)
     cart.addProduct(sonyWirelessHeadphone)
@@ -23,7 +23,7 @@ describe('Cart', function () {
   });
 
   it('should says two different carts are not equal even with same items', function () {
-    const applePencil = new Product('Apple Pencil');
+    const applePencil = new Product('Apple Pencil', new Price(2));
     const cart1 = new Cart();
     const cart2 = new Cart();
 
