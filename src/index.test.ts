@@ -1,7 +1,7 @@
 import { Cart } from './ddd_bootcamp/domain/cart';
 import { Product } from './ddd_bootcamp/domain/product';
 import { Price } from './ddd_bootcamp/domain/Price';
-import { DiscountedPrice } from './ddd_bootcamp/domain/DiscountedPrice';
+import { CompetitorBasedPricer } from './ddd_bootcamp/domain/domain_service/CompetitorBasedPricer';
 
 describe('Cart', function () {
   it('should implement card', function () {
@@ -39,13 +39,15 @@ describe('Cart', function () {
     expect(cart1.equals(cart1)).toBeTruthy();
   });
 
-  it('should create products with 10% discount', function () {
+  it('should create products with discount', function () {
     const competitorPrice = {
       'Apple Pencil': new Price(2),
       'Sony Wireless headphone': new Price(3)
     };
 
-    const discountedPrice = new DiscountedPrice(competitorPrice['Apple Pencil'].value);
-    new Product('Apple Pencil', discountedPrice)
+    const discountedPrice = new CompetitorBasedPricer(competitorPrice).getPrice('Apple Pencil');
+    const product = new Product('Apple Pencil', new Price(discountedPrice))
+
+    expect(product.price).toEqual(new Price(1.8))
   });
 });
