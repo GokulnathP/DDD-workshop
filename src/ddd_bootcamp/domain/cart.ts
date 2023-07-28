@@ -2,7 +2,7 @@ import {Item} from "./item";
 import {Product} from "./product";
 
 export class Cart {
-  private readonly cartItems: Item[];
+  private cartItems: Item[];
 
   constructor() {
     this.cartItems = []
@@ -15,6 +15,10 @@ export class Cart {
     } else {
       this.cartItems.push(new Item(product))
     }
+  }
+
+  public removeProduct(product: Product) {
+    this.cartItems = this.cartItems.filter((item) => item.product.name !== product.name)
   }
 
   public getCartItems() {
