@@ -1,5 +1,6 @@
 import { Cart } from './ddd_bootcamp/domain/cart';
-import {Price, Product} from './ddd_bootcamp/domain/product';
+import { Product } from './ddd_bootcamp/domain/product';
+import { Price } from './ddd_bootcamp/domain/Price';
 
 describe('Cart', function () {
   it('should implement card', function () {
