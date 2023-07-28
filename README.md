@@ -14,3 +14,8 @@ Add a “Apple Pencil” to a Cart
 ### Code Problem 2
 
 Add a “Sony Wireless headphone” to a Cart
+
+
+### Code Problem 3
+
+Add 2 quantity of “Apple Pencil” to a Cart.
