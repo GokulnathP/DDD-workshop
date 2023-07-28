@@ -1,4 +1,5 @@
-import { Cart, Product } from './index';
+import {Cart} from "./ddd_bootcamp/domain/cart";
+import {Product} from "./ddd_bootcamp/domain/product";
 
 describe('Cart', function () {
   it('should add items to the card', function () {
