@@ -108,6 +108,13 @@ Address is Value Object
  customer.updateAddress(new Address(“Mumbai”))
 ```
 
+### Code Problem 11:
+
+Calculate Total cost for the Order.
+Calculate shipping cost using weight of the Product.
+Total cost = cost of all products in order + (weightIngrams of each product *0.1)
+
+
 
 
 
